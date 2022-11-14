@@ -83,6 +83,17 @@ body {
   margin-bottom: -15px;
 }
 
+/* js alert */
+
+.alert {
+  background-color: rgb(255, 114, 114);
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 15px 15px;
+  margin-bottom: 15px;
+  display: none;
+}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -109,6 +120,15 @@ body {
   padding-right: 10px;
 }
 
+.form-control svg {
+  position: absolute;
+  right: 0px;
+  bottom: 7px;
+  margin-right: 15px;
+  color: #aaa;
+  cursor: pointer;
+}
+
 .form-panel .form-control .b-log {
   color: white;
   font-size: 0.9rem;
@@ -120,6 +140,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .container1 .p-bot {
@@ -1240,7 +1261,7 @@ main .pd-bot {
   margin-left: 32px;
 }
 
-.wrap div:nth-child(2) .card-p div:nth-child(1) {
+.wrap .ord-rig .card-p div:nth-child(1) {
   margin-right: 40px;
   display: flex;
   align-items: center;
@@ -1248,22 +1269,22 @@ main .pd-bot {
   position: relative;
 }
 
-.wrap div:nth-child(2) .card-p div:nth-child(1) a {
+.wrap .ord-rig .card-p div:nth-child(1) a {
   text-decoration: none;
   color: unset;
 }
 
-.wrap div:nth-child(2) .card-p div:nth-child(2) {
+.wrap .ord-rig .card-p div:nth-child(2) {
   position: relative;
   flex-grow: unset;
 }
 
-.wrap div:nth-child(2) .card-p div:nth-child(2) a {
+.wrap .ord-rig .card-p div:nth-child(2) a {
   text-decoration: none;
   color: unset;
 }
 
-.wrap div:nth-child(2) .card-p .line::after {
+.wrap .ord-rig .card-p .line::after {
   content: "";
   width: 100%;
   border-bottom: 3px solid #5f2eea;
@@ -1836,7 +1857,6 @@ main .pd-bot {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
   }
 
   .nav-bar .link2 a {
@@ -1852,6 +1872,7 @@ main .pd-bot {
 
   .search-input .si-main {
     width: 100%;
+    display: block;
   }
 
   nav .btn-primary {
@@ -1919,6 +1940,11 @@ main .pd-bot {
     padding: 0px;
     text-align: center;
     width: 70%;
+  }
+
+  .box button{
+    width: 70%;
+    padding: 10px 25px;
   }
 
   .box span {
@@ -2017,9 +2043,28 @@ main .pd-bot {
   }
 
   .wrap .ord-rig {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  /* movie select mobile */
+  .wrap .left2 .card-simp .card-f {
+    flex-direction: column;
+  }
+
+  .wrap .left2 .card-simp .left-jdl h2{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .wrap .left2 .card-simp .btn-grey {
+    justify-content: center;
+  }
+
+  .wrap .left2 .card-simp .btn-grey a {
+    width: 100%;
+    text-align: center;
   }
 
   .wrap .ord-rig button {
@@ -2029,26 +2074,60 @@ main .pd-bot {
   }
 
   .wrap .ord-rig .card-p {
-    width: 100%;
     margin-left: 0px;
+    flex-direction: column;
+  }
+
+  .wrap .ord-rig .card-p div:nth-child(1) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .wrap .ord-rig .card-p div:nth-child(2) {
+    display: flex;
+    justify-content: center;
   }
 
   .wrap .ord-rig div {
     margin-left: 0px;
   }
 
-  .wrap .ord-rig .ticket {
-    width: 100%;
+  .wrap .ticket .t-top {
+    flex-direction: column-reverse;
+  }
+
+  .wrap .ticket .t-top .t-right {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .wrap .ticket .t-top .t-left {
+    text-align: center;
+  }
+
+  .wrap .ticket .t-bot {
+    flex-direction: column;
+  }
+
+  .wrap .ticket .t-bot .tb-left {
+    justify-content: center;
+  }
+
+  .wrap .ticket .t-bot .tb-right {
+    display: flex;
+    justify-content: center;
   }
 
   .wrap .ticket .t-bot .tb-left .tick-ton {
     padding: 10px 30px;
+    justify-content: center;
+    width: 100%;
   }
 
   .wrap .ord-rig .card-p2,
   .wrap .ord-rig button,
   .wrap .ord-rig .card-p3 {
-    width: 100%;
     margin-left: 0px;
   }
 
@@ -2083,7 +2162,21 @@ main .pd-bot {
   }
 
   .wrap .left2 .blank.pd .mid-t {
-    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrap .left2 .blank.pd .mid-t  h3 {
+    text-align: center;
+  }
+
+  .wrap .left2 .blank.pd .mid-t  .seat-row {
+    justify-content: space-around;
+  }
+
+  .wrap .left2 .blank.pd .mid-t  .seat-col {
+    margin-right: 0px;
+    flex-grow: unset;
   }
 
   .wrap .left2 .btn-flex {

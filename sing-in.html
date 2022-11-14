@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Mulish&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Tikitz</title>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <div class="container1">
@@ -25,16 +26,18 @@
         <h1>Sign In</h1>
         <p>Sign in with your data that you entered during<br>
 your registration</p><br>
+        <div class="alert">Email atau password salah !</div>
         <form class="form-control">
-          <label for="emial">Email</label><br>
-          <input type="email" placeholder="Write your email" /><br>
+          <label for="email">Email</label><br>
+          <input name="email" type="email" placeholder="Write your email" /><br>
           <label for="pass">Password</label><br>
           <div class="p-relative">
-          <input type="text" placeholder="Write your password" id="pass" />
-          <img src="assets/img/eye.png">
+          <input name="password" type="password" placeholder="Write your password" id="pass" />
+          <!-- <img src="assets/img/eye.png">  -->
+          <i id="i-eye" data-feather="eye"></i>
           </div>
           <br>
-          <a class="b-log" href="home.html">Sign In</a> 
+          <button type="submit" class="b-log">Sign In</button> 
           <br>
         </form>
         <p class="p-bot">Forgot your password? <a href="reset-password.html">Reset now</a></p>
@@ -42,5 +45,9 @@ your registration</p><br>
         <p class="p-bot">Don't have an account? <a href="sing-up.html">Sign Up</a></p>
       </section>
     </div>
+    <script src="assets/javascript/script.js"></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
