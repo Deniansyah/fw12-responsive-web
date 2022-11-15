@@ -483,7 +483,7 @@ main .head-ns {
   display: inline-block;
   border: 2px solid #5f2eea;
   color: #5f2eea;
-  padding: 10px 30px;
+  padding: 7px 20px;
   border-radius: 4px;
   margin-right: 15px;
 }
@@ -492,7 +492,6 @@ main .head-ns {
   display: inline-block;
   border: 2px solid #5f2eea;
   background-color: #5f2eea;
-  padding: 10px 30px;
   border-radius: 4px;
 }
 
@@ -1116,6 +1115,48 @@ main .pd-bot {
   border-radius: 8px;
   flex-grow: unset;
   margin-bottom: 10px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap .left2 .blank .line-pp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrap .left2 .blank .line-pp .ln-pp {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap .left2 .blank .line-pp .ln-pp p {
+  background-color: #fff;
+  color: #dedede;
+  padding: 0px 20px;
+  width: fit-content;
+  justify-content: center;
+  margin-bottom: -7px;
+}
+
+.wrap .left2 .blank .line-pp .ln-pp {
+  border-bottom: 1px solid #dedede;
+  width: 100%;
+}
+
+.wrap .left2 .blank .b-link {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+  color: #dedede;
+}
+
+.wrap .left2 .blank .b-link a {
+  color: #5f2eea;
+  text-decoration: none;
 }
 
 .wrap .right2 .form-control {

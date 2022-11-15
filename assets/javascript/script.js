@@ -25,36 +25,44 @@ if (window.location.href.endsWith('sing-in.html')) {
         }
         });
 }else if (window.location.href.endsWith("index.html") || window.location.href.endsWith("/") || window.location.href.endsWith("home.html")) {
+    
+    
     const data = [
         {
-        judul: "Spider-Man",
-        genre: "Action, Adventure, Sci-Fi",
-        link: "detail-movie.html?id1",
-        },
-        {
         judul: "Black Widow",
-        genre: "Action, Marvel, Sci-Fi",
-        link: "detail-movie.html?id2",
-        },
-        {
-        judul: "Spider-Man",
         genre: "Action, Adventure, Sci-Fi",
-        link: "detail-movie.html?id1",
+        link: "detail-movie.html",
+        img: "assets/img/film2.png",
         },
         {
-        judul: "Black Widow",
-        genre: "Action, Marvel, Sci-Fi",
-        link: "detail-movie.html?id2",
+        judul: "The Witches",
+        genre: "Adventure, Comedi, Family",
+        link: "detail-movie.html",
+        img: "assets/img/film6.png",
+        },
+        {
+        judul: "Tenet",
+        genre: "Action, Sci-Fi",
+        link: "detail-movie.html",
+        img: "assets/img/film5.png",
         },
         {
         judul: "Spider-Man",
-        genre: "Action, Adventure, Sci-Fi",
-        link: "detail-movie.html?id1",
+        genre: "Action, Marvel, Sci-Fi",
+        link: "detail-movie.html",
+        img: "assets/img/film1.png",
         },
         {
-        judul: "Black Widow",
+        judul: "The Lion King",
+        genre: "Adventure, Animation, Family",
+        link: "detail-movie.html",
+        img: "assets/img/film4.png",
+        },
+        {
+        judul: "Jhon Wick 3",
         genre: "Action, Marvel, Sci-Fi",
         link: "detail-movie.html?id2",
+        img: "assets/img/film3.png",
         },
     ];
 
@@ -69,7 +77,7 @@ if (window.location.href.endsWith('sing-in.html')) {
         imgS.className = "img-s";
         crdBr.appendChild(imgS);
         const img = document.createElement("img");
-        img.src = "assets/img/film1.png";
+        img.src = data.img;
         imgS.appendChild(img);
 
         const text = document.createElement("div");
@@ -95,11 +103,12 @@ if (window.location.href.endsWith('sing-in.html')) {
 
         const cardInside = document.createElement("div");
         const img = document.createElement("img");
-        img.src = "assets/img/film1.png";
+        img.src = data.img;
         cardInside.appendChild(img);
 
         cardtop.appendChild(cardInside);
     });
+
 
 }else if (window.location.href.endsWith("sing-up.html") || window.location.href.endsWith("reset-password.html")) {
 
