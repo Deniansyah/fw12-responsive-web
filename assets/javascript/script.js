@@ -10,6 +10,20 @@ if (window.location.href.endsWith('sing-in.html')) {
         }
         event.preventDefault();
     });
+
+    const hideShow = document.getElementsByName('password')[0];
+    const changeEye = document.getElementById("i-eye");
+    changeEye.addEventListener("click", () => {
+        if (changeEye.dataset.clicked === "false") {
+            changeEye.innerHTML = feather.icons["eye-off"].toSvg();
+            hideShow.setAttribute('type', 'text');
+            changeEye.dataset.clicked = "true";
+        } else {
+            changeEye.innerHTML = feather.icons["eye"].toSvg();
+            hideShow.setAttribute("type", "password");
+            changeEye.dataset.clicked = "false";
+        }
+        });
 }else if (window.location.href.endsWith("index.html") || window.location.href.endsWith("/") || window.location.href.endsWith("home.html")) {
     const data = [
         {
@@ -86,5 +100,35 @@ if (window.location.href.endsWith('sing-in.html')) {
 
         cardtop.appendChild(cardInside);
     });
+
+}else if (window.location.href.endsWith("sing-up.html") || window.location.href.endsWith("reset-password.html")) {
+
+    const hideShow = document.getElementsByName("password")[0];
+    const changeEye = document.getElementById("i-eye");
+    changeEye.addEventListener("click", () => {
+        if (changeEye.dataset.clicked === "false") {
+            changeEye.innerHTML = feather.icons["eye-off"].toSvg();
+            hideShow.setAttribute("type", "text");
+            changeEye.dataset.clicked = "true";
+        } else {
+            changeEye.innerHTML = feather.icons["eye"].toSvg();
+            hideShow.setAttribute("type", "password");
+            changeEye.dataset.clicked = "false";
+        }
+        });
+
+    const hideShow2 = document.getElementsByName("password2")[0];
+    const changeEye2 = document.getElementById("i-eye2");
+    changeEye2.addEventListener("click", () => {
+        if (changeEye2.dataset.clicked === "false") {
+            changeEye2.innerHTML = feather.icons["eye-off"].toSvg();
+            hideShow2.setAttribute("type", "text");
+            changeEye2.dataset.clicked = "true";
+        } else {
+            changeEye2.innerHTML = feather.icons["eye"].toSvg();
+            hideShow2.setAttribute("type", "password");
+            changeEye2.dataset.clicked = "false";
+        }
+        });
 
 }

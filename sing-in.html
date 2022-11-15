@@ -30,11 +30,13 @@ your registration</p><br>
         <form class="form-control">
           <label for="email">Email</label><br>
           <input name="email" type="email" placeholder="Write your email" /><br>
-          <label for="pass">Password</label><br>
+          <label for="password">Password</label><br>
           <div class="p-relative">
-          <input name="password" type="password" placeholder="Write your password" id="pass" />
-          <!-- <img src="assets/img/eye.png">  -->
-          <i id="i-eye" data-feather="eye"></i>
+            <input name="password" type="password" placeholder="Write your password" id="pass" />
+            <!-- <img src="assets/img/eye.png">  -->
+            <div id="i-eye" data-clicked="false">
+              <i data-feather="eye"></i>
+            </div>
           </div>
           <br>
           <button type="submit" class="b-log">Sign In</button> 

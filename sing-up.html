@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Mulish&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Tikitz</title>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <div class="container1">
@@ -33,10 +34,13 @@
           <input type="telp" placeholder="Write your phone number" id="telp" /><br>
           <label for="emial">Email</label><br>
           <input type="email" placeholder="Write your email" /><br>
-          <label for="pass">Password</label><br>
+          <label for="password">Password</label><br>
           <div class="p-relative">
-            <img src="assets/img/eye.png">
-            <input type="text" placeholder="Write your password" id="pass" />
+            <input name="password" type="password" placeholder="Write your password" id="pass" />
+            <!-- <img src="assets/img/eye.png"> -->
+            <div id="i-eye" data-clicked="false">
+              <i data-feather="eye"></i>
+            </div>
           </div>
           <br>
           <a class="b-log" href="sing-in.html">Sign Up</a>
@@ -45,5 +49,9 @@
         </form>
       </section>
     </div>
+    <script src="assets/javascript/script.js"></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>

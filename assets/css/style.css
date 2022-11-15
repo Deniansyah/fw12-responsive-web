@@ -127,6 +127,7 @@ body {
   margin-right: 15px;
   color: #aaa;
   cursor: pointer;
+  width: 20px;
 }
 
 .form-panel .form-control .b-log {
@@ -185,7 +186,7 @@ body {
 
 .form-panel .form-control input.b-rad,
 .form-panel .form-control button.b-rad {
-  height: 44px;
+  height: 38px;
   border-radius: 10px;
 }
 /* akhir validation-email */
