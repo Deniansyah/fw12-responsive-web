@@ -40,14 +40,6 @@ if (window.location.href.endsWith('sing-in.html')) {
 // segmentasi untuk page index dan home (untuk card dinamis)
 else if (window.location.href.endsWith("index.html") || window.location.href.endsWith("/") || window.location.href.endsWith("home.html")) {
 
-    // const blackWidow = fetch("https://api.themoviedb.org/3/movie/497698-?api_key=15e383204c1b8a09dbfaaa4c01ed7e17");
-    // blackWidow
-    // .then((response) => response.json())
-    // .then((json) => console.log(json.genres))
-    // .catch((error) => {
-    //     console.log(error)
-    // })
-
     // membuat object untuk isi card film
     const data = [
         {
@@ -95,10 +87,32 @@ else if (window.location.href.endsWith("index.html") || window.location.href.end
 
         // membuat wadah untuk gambar ke pembukus card
         const cardInside = document.createElement("div");
+        cardInside.className = "per-card";
+        
         const img = document.createElement("img");
         img.src = data.img;
         // memasukan gambar ke wadah
         cardInside.appendChild(img);
+
+        const text = document.createElement('div');
+        text.className = "text";
+        cardInside.appendChild(text);
+
+        const judul = document.createElement('h4');
+        judul.innerText = data.judul;
+        text.appendChild(judul);
+
+        const genre = document.createElement("p");
+        genre.innerHTML = data.genre;
+        text.appendChild(genre);
+
+        const link = document.createElement("div");
+        link.className = "btn";
+        const aLink = document.createElement("a");
+        aLink.textContent = "Details";
+        aLink.setAttribute("href", "movie-detail.html");
+        link.appendChild(aLink);
+        text.appendChild(link);
 
         // wadah dimasukan ke pembungkus
         cardtop.appendChild(cardInside);
@@ -186,3 +200,4 @@ else if (window.location.href.endsWith("sing-up.html") || window.location.href.e
         });
 
 }
+
