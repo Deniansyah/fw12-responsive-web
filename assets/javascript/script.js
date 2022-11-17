@@ -1,35 +1,57 @@
+// segmentasi untuk sign-in.html (untuk validasi form dan hideShow password)
 if (window.location.href.endsWith('sing-in.html')) {
+    // akses class form-control dan alert untuk membuat validasi form sign-in
     const formLogin = document.getElementsByClassName("form-control")[0];
     const alert = document.getElementsByClassName("alert")[0];
 
+    // memberikan pengkondisian disaat di submit dengan email dan password
     formLogin.addEventListener("submit", (event) => {
+        // jika true masuk ke home.html
         if (event.target.email.value === "deni@mail.com" && event.target.password.value === "1") {
             window.location = "home.html";
-        } else {
+        } 
+        // jika false tampilkan alert dan tidak pindah page
+        else {
             alert.style.display = "inline-block";
         }
+        // agar tidak ter-refresh
         event.preventDefault();
     });
 
+    // akses input password dan feather icon untuk membuat hide and show password
     const hideShow = document.getElementsByName('password')[0];
     const changeEye = document.getElementById("i-eye");
+    // memberikan pengkondisian saat icon di click
     changeEye.addEventListener("click", () => {
+        // ubah iconnya dan password terlihat
         if (changeEye.dataset.clicked === "false") {
             changeEye.innerHTML = feather.icons["eye-off"].toSvg();
             hideShow.setAttribute('type', 'text');
             changeEye.dataset.clicked = "true";
-        } else {
+        } 
+        // ubah lagi icon dan password kembali tidak terlihat
+        else {
             changeEye.innerHTML = feather.icons["eye"].toSvg();
             hideShow.setAttribute("type", "password");
             changeEye.dataset.clicked = "false";
         }
         });
-}else if (window.location.href.endsWith("index.html") || window.location.href.endsWith("/") || window.location.href.endsWith("home.html")) {
-    
-    
+}
+// segmentasi untuk page index dan home (untuk card dinamis)
+else if (window.location.href.endsWith("index.html") || window.location.href.endsWith("/") || window.location.href.endsWith("home.html")) {
+
+    // const blackWidow = fetch("https://api.themoviedb.org/3/movie/497698-?api_key=15e383204c1b8a09dbfaaa4c01ed7e17");
+    // blackWidow
+    // .then((response) => response.json())
+    // .then((json) => console.log(json.genres))
+    // .catch((error) => {
+    //     console.log(error)
+    // })
+
+    // membuat object untuk isi card film
     const data = [
         {
-        judul: "Black Widow",
+        judul: "Black",
         genre: "Action, Adventure, Sci-Fi",
         link: "detail-movie.html",
         img: "assets/img/film2.png",
@@ -66,29 +88,40 @@ if (window.location.href.endsWith('sing-in.html')) {
         },
     ];
 
+    // menampilkan satu" data yang dibuat di object ke section upcoming movies
     data.forEach((data) => {
+        // akses ke pembungkus card
         const cardwrapper = document.getElementById("card2");
 
+        // membuat div untuk wadah semua isi di object data
         const crdBr = document.createElement("div");
         crdBr.className = "crd-br";
+        // dimasukan kedalam pembungkus card
         cardwrapper.appendChild(crdBr);
 
+        // membuat tempat untuk gambar
         const imgS = document.createElement("div");
         imgS.className = "img-s";
+        // tempat gambar ini dimasukan ke dalam wadahnya crdBr
         crdBr.appendChild(imgS);
         const img = document.createElement("img");
         img.src = data.img;
+        // membuat dan memasukan gambar ke tempat gambar
         imgS.appendChild(img);
 
+        // membuat pembukus untuk judul dan genre dan dimasukan kedalam wadahnya crdBr
         const text = document.createElement("div");
         text.className = "text";
         crdBr.appendChild(text);
+        // membuat dan memasukan judul kedalam pembukusnya text
         const judul = document.createElement("h4");
         judul.innerHTML = data.judul;
         text.appendChild(judul);
+         // membuat dan memasukan genre kedalam pembukusnya text
         const genre = document.createElement("p");
         genre.innerHTML = data.genre;
         text.appendChild(genre);
+         // membuat dan memasukan tombol detail kedalam pembukusnya text
         const link = document.createElement("div");
         link.className = "btn";
         const aLink = document.createElement("a");
@@ -98,34 +131,47 @@ if (window.location.href.endsWith('sing-in.html')) {
         text.appendChild(link);
     });
 
+    // menampilkan satu" data yang dibuat di object ke section now showing
     data.forEach((data) => {
+        // akses ke pembungkus card
         const cardtop = document.getElementById("card");
 
+        // membuat wadah untuk gambar ke pembukus card
         const cardInside = document.createElement("div");
         const img = document.createElement("img");
         img.src = data.img;
+        // memasukan gambar ke wadah
         cardInside.appendChild(img);
 
+        // wadah dimasukan ke pembungkus
         cardtop.appendChild(cardInside);
     });
 
 
-}else if (window.location.href.endsWith("sing-up.html") || window.location.href.endsWith("reset-password.html")) {
+}
+// segmentasi untuk sign-up dan reset password (untuk hideShow password)
+else if (window.location.href.endsWith("sing-up.html") || window.location.href.endsWith("reset-password.html")) {
 
-    const hideShow = document.getElementsByName("password")[0];
+    // akses input password dan feather icon untuk membuat hide and show password
+    const hideShow = document.getElementsByName('password')[0];
     const changeEye = document.getElementById("i-eye");
+    // memberikan pengkondisian saat icon di click
     changeEye.addEventListener("click", () => {
+        // ubah iconnya dan password terlihat
         if (changeEye.dataset.clicked === "false") {
             changeEye.innerHTML = feather.icons["eye-off"].toSvg();
-            hideShow.setAttribute("type", "text");
+            hideShow.setAttribute('type', 'text');
             changeEye.dataset.clicked = "true";
-        } else {
+        } 
+        // ubah lagi icon dan password kembali tidak terlihat
+        else {
             changeEye.innerHTML = feather.icons["eye"].toSvg();
             hideShow.setAttribute("type", "password");
             changeEye.dataset.clicked = "false";
         }
-        });
+    });
 
+    // sama juga dengan diatasnya hanya beda id dan class saja
     const hideShow2 = document.getElementsByName("password2")[0];
     const changeEye2 = document.getElementById("i-eye2");
     changeEye2.addEventListener("click", () => {
