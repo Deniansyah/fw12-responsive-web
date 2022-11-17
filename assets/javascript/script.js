@@ -7,7 +7,7 @@ if (window.location.href.endsWith('sing-in.html')) {
     // memberikan pengkondisian disaat di submit dengan email dan password
     formLogin.addEventListener("submit", (event) => {
         // jika true masuk ke home.html
-        if (event.target.email.value === "deni@mail.com" && event.target.password.value === "1") {
+        if (event.target.email.value === "admin@mail.com" && event.target.password.value === "1") {
             window.location = "home.html";
         } 
         // jika false tampilkan alert dan tidak pindah page
@@ -25,13 +25,13 @@ if (window.location.href.endsWith('sing-in.html')) {
     changeEye.addEventListener("click", () => {
         // ubah iconnya dan password terlihat
         if (changeEye.dataset.clicked === "false") {
-            changeEye.innerHTML = feather.icons["eye-off"].toSvg();
+            changeEye.innerHTML = feather.icons["eye"].toSvg();
             hideShow.setAttribute('type', 'text');
             changeEye.dataset.clicked = "true";
         } 
         // ubah lagi icon dan password kembali tidak terlihat
         else {
-            changeEye.innerHTML = feather.icons["eye"].toSvg();
+            changeEye.innerHTML = feather.icons["eye-off"].toSvg();
             hideShow.setAttribute("type", "password");
             changeEye.dataset.clicked = "false";
         }
@@ -88,6 +88,22 @@ else if (window.location.href.endsWith("index.html") || window.location.href.end
         },
     ];
 
+    // menampilkan satu" data yang dibuat di object ke section now showing
+    data.forEach((data) => {
+        // akses ke pembungkus card
+        const cardtop = document.getElementById("card");
+
+        // membuat wadah untuk gambar ke pembukus card
+        const cardInside = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = data.img;
+        // memasukan gambar ke wadah
+        cardInside.appendChild(img);
+
+        // wadah dimasukan ke pembungkus
+        cardtop.appendChild(cardInside);
+    });
+
     // menampilkan satu" data yang dibuat di object ke section upcoming movies
     data.forEach((data) => {
         // akses ke pembungkus card
@@ -131,23 +147,6 @@ else if (window.location.href.endsWith("index.html") || window.location.href.end
         text.appendChild(link);
     });
 
-    // menampilkan satu" data yang dibuat di object ke section now showing
-    data.forEach((data) => {
-        // akses ke pembungkus card
-        const cardtop = document.getElementById("card");
-
-        // membuat wadah untuk gambar ke pembukus card
-        const cardInside = document.createElement("div");
-        const img = document.createElement("img");
-        img.src = data.img;
-        // memasukan gambar ke wadah
-        cardInside.appendChild(img);
-
-        // wadah dimasukan ke pembungkus
-        cardtop.appendChild(cardInside);
-    });
-
-
 }
 // segmentasi untuk sign-up dan reset password (untuk hideShow password)
 else if (window.location.href.endsWith("sing-up.html") || window.location.href.endsWith("reset-password.html")) {
@@ -159,13 +158,13 @@ else if (window.location.href.endsWith("sing-up.html") || window.location.href.e
     changeEye.addEventListener("click", () => {
         // ubah iconnya dan password terlihat
         if (changeEye.dataset.clicked === "false") {
-            changeEye.innerHTML = feather.icons["eye-off"].toSvg();
+            changeEye.innerHTML = feather.icons["eye"].toSvg();
             hideShow.setAttribute('type', 'text');
             changeEye.dataset.clicked = "true";
         } 
         // ubah lagi icon dan password kembali tidak terlihat
         else {
-            changeEye.innerHTML = feather.icons["eye"].toSvg();
+            changeEye.innerHTML = feather.icons["eye-off"].toSvg();
             hideShow.setAttribute("type", "password");
             changeEye.dataset.clicked = "false";
         }
@@ -176,11 +175,11 @@ else if (window.location.href.endsWith("sing-up.html") || window.location.href.e
     const changeEye2 = document.getElementById("i-eye2");
     changeEye2.addEventListener("click", () => {
         if (changeEye2.dataset.clicked === "false") {
-            changeEye2.innerHTML = feather.icons["eye-off"].toSvg();
+            changeEye2.innerHTML = feather.icons["eye"].toSvg();
             hideShow2.setAttribute("type", "text");
             changeEye2.dataset.clicked = "true";
         } else {
-            changeEye2.innerHTML = feather.icons["eye"].toSvg();
+            changeEye2.innerHTML = feather.icons["eye-off"].toSvg();
             hideShow2.setAttribute("type", "password");
             changeEye2.dataset.clicked = "false";
         }
