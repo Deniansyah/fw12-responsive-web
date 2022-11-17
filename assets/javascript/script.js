@@ -118,48 +118,55 @@ else if (window.location.href.endsWith("index.html") || window.location.href.end
         cardtop.appendChild(cardInside);
     });
 
-    // menampilkan satu" data yang dibuat di object ke section upcoming movies
-    data.forEach((data) => {
-        // akses ke pembungkus card
-        const cardwrapper = document.getElementById("card2");
 
-        // membuat div untuk wadah semua isi di object data
-        const crdBr = document.createElement("div");
-        crdBr.className = "crd-br";
-        // dimasukan kedalam pembungkus card
-        cardwrapper.appendChild(crdBr);
+    const getUpcoming = fetch("https://imdb-api.com/en/API/ComingSoon/k_x0h466n8");
+    const getData = async () => {
 
-        // membuat tempat untuk gambar
-        const imgS = document.createElement("div");
-        imgS.className = "img-s";
-        // tempat gambar ini dimasukan ke dalam wadahnya crdBr
-        crdBr.appendChild(imgS);
-        const img = document.createElement("img");
-        img.src = data.img;
-        // membuat dan memasukan gambar ke tempat gambar
-        imgS.appendChild(img);
+        const response = await getUpcoming;
+        const data = await response.json();
 
-        // membuat pembukus untuk judul dan genre dan dimasukan kedalam wadahnya crdBr
-        const text = document.createElement("div");
-        text.className = "text";
-        crdBr.appendChild(text);
-        // membuat dan memasukan judul kedalam pembukusnya text
-        const judul = document.createElement("h4");
-        judul.innerHTML = data.judul;
-        text.appendChild(judul);
-         // membuat dan memasukan genre kedalam pembukusnya text
-        const genre = document.createElement("p");
-        genre.innerHTML = data.genre;
-        text.appendChild(genre);
-         // membuat dan memasukan tombol detail kedalam pembukusnya text
-        const link = document.createElement("div");
-        link.className = "btn";
-        const aLink = document.createElement("a");
-        aLink.textContent = "Details";
-        aLink.setAttribute("href", "movie-detail.html");
-        link.appendChild(aLink);
-        text.appendChild(link);
-    });
+        data.items.forEach((value) => {
+            const title = value.title
+            const image = value.image
+            const genres = value.genres
+            const cardwrapper = document.getElementById("card2");
+
+            const crdBr = document.createElement("div");
+            crdBr.className = "crd-br";
+            cardwrapper.appendChild(crdBr);
+
+            const imgS = document.createElement("div");
+            imgS.className = "img-s";
+            crdBr.appendChild(imgS);
+            const img = document.createElement("img");
+            img.src = image;
+            imgS.appendChild(img);
+
+            const text = document.createElement("div");
+            text.className = "text";
+            crdBr.appendChild(text);
+            
+            const judul = document.createElement("h4");
+            judul.innerHTML = title;
+            text.appendChild(judul);
+
+            const genre = document.createElement("p");
+            genre.innerHTML = genres;
+            text.appendChild(genre);
+
+            const link = document.createElement("div");
+            link.className = "btn";
+            const aLink = document.createElement("a");
+            aLink.textContent = "Details";
+            aLink.setAttribute("href", "movie-detail.html");
+            link.appendChild(aLink);
+            text.appendChild(link);
+
+        })
+    }
+
+    getData()
+
 
 }
 // segmentasi untuk sign-up dan reset password (untuk hideShow password)
